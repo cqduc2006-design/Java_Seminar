@@ -1,8 +1,24 @@
 package Approve;
 
 public class Main {
+
+    public static boolean checkCreditHistory() {
+    System.out.println("Checking in progress ...");
+    return true;
+    }
+    
     public static void main(String[] args) {
-        boolean isApproved = Approve.approveForLoan(4, false, false, false, false, false, false);
+        boolean isBlacklisted = true;
+        
+        if (!isBlacklisted && checkCreditHistory()) {
+            System.out.println("Eligible");
+        } else {
+            System.out.println("Not Eligible, Short-circuit evaluation kick-in");
+        }
+
+
+
+        boolean isApproved = Approve.approveForLoan(4, false, true, true, true, true, false);
 
         if (isApproved) {
             System.out.println("Loan Approved");
