@@ -22,8 +22,10 @@ public class Main {
 
         if (isApproved) {
             System.out.println("Loan Approved");
+
+            char rank = ChooseRank.chooseRank(0);
         
-            double interestRate = Ranking.getRate('B');
+            double interestRate = Ranking.getRate(rank);
             System.out.println("Assigned Interest Rate: " + (interestRate * 100) + "%");
             
         } else {
